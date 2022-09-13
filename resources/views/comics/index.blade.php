@@ -9,16 +9,16 @@
          <th>Type</th>
          <th>Price</th>
       </tr>
-      <tr>
-         @forelse ($comics as $comic)
+      @forelse ($comics as $comic)
+         <tr>
             <td>{{ $comic->id }}</td>
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
             <td>{{ $comic->price }}</td>
-         @empty
-             <h2>Sorrry! No comics here...</h2>
-         @endforelse
-      </tr>
+            @empty
+            <h2>Sorrry! No comics here...</h2>
+         </tr>
+      @endforelse
    </table>
 @endsection
