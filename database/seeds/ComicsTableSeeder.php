@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Comic;
 use Illuminate\Database\Seeder;
 
 class ComicsTableSeeder extends Seeder
@@ -122,5 +123,17 @@ class ComicsTableSeeder extends Seeder
                 "type" => "graphic novel"
             ]
         ];
+
+        foreach ($comics as $comic) {
+            $newComic = new Comic();
+            $newComic->title = $comics['title'];
+            $newComic->description = $comics['description'];
+            $newComic->thumb = $comics['thumb'];
+            $newComic->price = $comics['price'];
+            $newComic->series = $comics['series'];
+            $newComic->sale_date = $comics['sale_date'];
+            $newComic->type = $comics['type'];
+            $newComic->save();
+        }
     }
 }
