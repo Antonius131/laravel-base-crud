@@ -12,7 +12,7 @@
          </div>
          <div class="mb-3">
             <label for="input-description" class="form-label">Description</label>
-            <textarea type="text" name="description" class="form-control" id="input-description">
+            <textarea type="text" name="description" class="form-control" id="input-description"></textarea>
          </div>
          <div class="mb-3">
             <label for="input-thumb" class="form-label">Thumbnail</label>
