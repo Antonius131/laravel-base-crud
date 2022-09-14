@@ -1,22 +1,37 @@
 @extends('layouts.main')
 
 @section('main-content')
-   <form action="{{ route('comics.store') }}" method="POST">
-      @csrf
-
-      <div class="mb-3">
-         <label for="exampleInputEmail1" class="form-label">Email address</label>
-         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
+<div class="row">
+   <div class="col-12">
+      <form action="{{ route('comics.store') }}" method="POST">
+         @csrf
+   
          <div class="mb-3">
-         <label for="exampleInputPassword1" class="form-label">Password</label>
-         <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="mb-3 form-check">
-         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-         <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-   </form>
+            <label for="input-title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="input-title">
+         </div>
+         <div class="mb-3">
+            <label for="input-description" class="form-label">Description</label>
+            <textarea type="text" name="description" class="form-control" id="input-description">
+         </div>
+         <div class="mb-3">
+            <label for="input-thumb" class="form-label">Thumbnail</label>
+            <input type="text" name="thumb" class="form-control" id="input-thumb">
+         </div>
+         <div class="mb-3">
+            <label for="input-price" class="form-label">Price</label>
+            <input type="text" name="price" class="form-control" id="input-price">
+         </div>
+         <div class="mb-3">
+            <label for="input-series" class="form-label">Series</label>
+            <input type="text" name="series" class="form-control" id="input-series">
+         </div>
+         <div class="mb-3">
+            <label for="input-sale-date" class="form-label">Sale Date</label>
+            <input type="text" name="sale_date" class="form-control" id="input-sale-date">
+         </div>
+         <button type="submit" class="btn btn-primary">Add Comic</button>
+      </form>
+   </div>
+</div>
 @endsection
