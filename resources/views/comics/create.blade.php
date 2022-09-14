@@ -28,7 +28,7 @@
          </div>
          <div class="mb-3">
             <label for="input-sale-date" class="form-label">Sale Date</label>
-            <input type="text" name="sale_date" class="form-control" id="input-sale-date">
+            <input type="date" name="sale_date" class="form-control" id="input-sale-date">
          </div>
          <button type="submit" class="btn btn-primary">Add Comic</button>
       </form>
