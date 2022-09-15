@@ -3,9 +3,9 @@
 @section('main-content')
 <div class="row">
    <div class="col-12">
-      <form action="{{ route('comics.update', $comic->id) }}" method="POST">
+      <form action="{{ route('comics.update', ['id' => $comic->id]) }}" method="POST">
          @csrf
-         @method('PATCH')
+         @method('PUT')
 
          <div class="mb-3">
             <label for="input-title" class="form-label">Title</label>
