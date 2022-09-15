@@ -10,6 +10,7 @@
             <th scope="col">Type</th>
             <th scope="col">Price</th>
             <th></th>
+            <th></th>
          </tr>
       </thead>
       <tbody>
@@ -34,6 +35,14 @@
                </td>
                <td>
                   <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-success">Edit</a>
+               </td>
+               <td>
+                  <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                     @csrf
+                     @method('DELETE')
+   
+                     <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
                </td>
                @empty
                <h2>Sorrry! No comics here...</h2>
