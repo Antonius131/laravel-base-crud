@@ -9,6 +9,7 @@
             <th scope="col">Series</th>
             <th scope="col">Type</th>
             <th scope="col">Price</th>
+            <th></th>
          </tr>
       </thead>
       <tbody>
@@ -30,6 +31,9 @@
                </td>
                <td>
                   {{ $comic->price }}
+               </td>
+               <td>
+                  <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-success">Edit</a>
                </td>
                @empty
                <h2>Sorrry! No comics here...</h2>
