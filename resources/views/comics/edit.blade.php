@@ -9,7 +9,7 @@
 
          <div class="mb-3">
             <label for="input-title" class="form-label">Title</label>
-            <input type="text" name="title" class="form-control" id="input-title" value="{{ $comic->title }}">
+            <input type="text" name="title" class="form-control" id="input-title" value="{{ old('title', $comic->title) }}">
             @error('title')
                <div class="alert alert-danger">
                   {{ $message }}
@@ -24,7 +24,7 @@
          </div>
          <div class="mb-3">
             <label for="input-thumb" class="form-label">Thumbnail</label>
-            <input type="text" name="thumb" class="form-control" id="input-thumb" value="{{ $comic->thumb }}">
+            <input type="text" name="thumb" class="form-control" id="input-thumb" value="{{ old('thumb', $comic->thumb) }}">
             @error('thumb')
                <div class="alert alert-danger">
                   {{ $message }}
