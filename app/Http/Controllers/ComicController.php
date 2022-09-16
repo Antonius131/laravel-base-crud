@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+
+    protected $validationRules = [
+        'title' => 'required|min:6|max:50|unique:comics',
+        'description' => 'required|min:6|max:250',
+        'thumb' => 'required|url',
+        'price' => 'required|integer',
+        'series' => 'required|min:2|max:20',
+        'sale_date' => 'required|date',
+        'type' => 'required|min:6|max:25'
+    ];
+
     /**
      * Display a listing of the resource.
      *
