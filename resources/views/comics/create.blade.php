@@ -9,18 +9,12 @@
          <div class="mb-3">
             <label for="input-title" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="input-title">
+            @error('title')
+               <div class="alert alert-danger">
+                  {{ $message }}
+               </div>
+            @enderror
          </div>
-         @if ($errors->any())
-            <div class="alert alert-danger">
-               <small>
-                  <ul>
-                     @foreach ($errors->all() as $message)
-                        <li>{{ $message }}</li>
-                     @endforeach
-                  </ul>
-               </small>
-            </div>
-         @endif
          <div class="mb-3">
             <label for="input-description" class="form-label">Description</label>
             <textarea type="text" name="description" class="form-control" id="input-description"></textarea>
@@ -28,6 +22,11 @@
          <div class="mb-3">
             <label for="input-thumb" class="form-label">Thumbnail</label>
             <input type="text" name="thumb" class="form-control" id="input-thumb">
+            @error('thumb')
+               <div class="alert alert-danger">
+                  {{ $message }}
+               </div>
+            @enderror
          </div>
          <div class="mb-3">
             <label for="input-price" class="form-label">Price</label>
