@@ -10,6 +10,17 @@
             <label for="input-title" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="input-title">
          </div>
+         @if ($errors->any())
+            <div class="alert alert-danger">
+               <small>
+                  <ul>
+                     @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                     @endforeach
+                  </ul>
+               </small>
+            </div>
+         @endif
          <div class="mb-3">
             <label for="input-description" class="form-label">Description</label>
             <textarea type="text" name="description" class="form-control" id="input-description"></textarea>
