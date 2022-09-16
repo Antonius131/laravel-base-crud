@@ -10,6 +10,11 @@
          <div class="mb-3">
             <label for="input-title" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="input-title" value="{{ $comic->title }}">
+            @error('title')
+               <div class="alert alert-danger">
+                  {{ $message }}
+               </div>
+            @enderror
          </div>
          <div class="mb-3">
             <label for="input-description" class="form-label">Description</label>
@@ -20,6 +25,11 @@
          <div class="mb-3">
             <label for="input-thumb" class="form-label">Thumbnail</label>
             <input type="text" name="thumb" class="form-control" id="input-thumb" value="{{ $comic->thumb }}">
+            @error('thumb')
+               <div class="alert alert-danger">
+                  {{ $message }}
+               </div>
+            @enderror
          </div>
          <div class="mb-3">
             <label for="input-price" class="form-label">Price</label>
