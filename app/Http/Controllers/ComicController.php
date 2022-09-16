@@ -15,7 +15,7 @@ class ComicController extends Controller
         'price' => 'required|integer',
         'series' => 'required|min:2|max:20',
         'sale_date' => 'required|date',
-        'type' => 'required|min:6|max:25'
+        'type' => 'required|min:6|max:25',
     ];
 
     protected $customValidationMessages = [
@@ -23,7 +23,7 @@ class ComicController extends Controller
         'title.min' => 'Il titolo deve avere almeno 6 caratteri',
         'title.unique' => 'Non puoi inserire un fumetto che già esiste',
 
-        'thumb.url' => 'Deve essere un link'
+        'thumb.url' => 'Deve essere un link',
     ];
 
     /**
@@ -59,12 +59,14 @@ class ComicController extends Controller
     {
         $data = $request->all();
 
+        $validatedData = $request->validate($this->validationRules, $this->customValidationMessages);
+        
         $newComic = new Comic;
         $newComic->title = $data['title'];
         $newComic->description = $data['description'];
         $newComic->thumb = $data['thumb'];
         $newComic->price = $data['price'];
-        $newComic->series = $data['series'];
+        $newComic->series = $data['series']; 
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
 
