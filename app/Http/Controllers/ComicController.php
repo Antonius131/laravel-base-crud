@@ -18,6 +18,14 @@ class ComicController extends Controller
         'type' => 'required|min:6|max:25'
     ];
 
+    protected $customValidationMessages = [
+        'title.required' => 'Deve esserci un titolo',
+        'title.min' => 'Il titolo deve avere almeno 6 caratteri',
+        'title.unique' => 'Non puoi inserire un fumetto che già esiste',
+
+        'thumb.url' => 'Deve essere un link'
+    ];
+
     /**
      * Display a listing of the resource.
      *
